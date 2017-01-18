@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="MapControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MapControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="577*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="0">
+            <Button Content="Roads" Click="Button_Click" Margin="3" />
+            <Button Content="Aerial" Click="Button_Click" Margin="3" />
+            <Button Content="Aerial With Roads" Click="Button_Click" Margin="3"/>
+            <Button Content="Terrain" Click="Button_Click" Margin="3" />
+            <Button Content="3D Aerial" Click="Button_Click" Margin="3" />
+            <Button Content="3D Aerial With Roads" Click="Button_Click" Margin="3"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button x:Name="btnCurrentLocation" Content="Current Location" Click="btnCurrentLocation_Click" Margin="3"></Button>
+            <Button x:Name="btnZoomIn" Content="Zoom In" Click="btnZoomIn_Click" Margin="3" />
+            <Button x:Name="btnZoomOut" Content="Zoom Out" Click="btnZoomOut_Click" Margin="3" />
+            <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="3">Show Traffic</CheckBox>
+            <Button x:Name="btnWhatZoom" Content="What Zoom" Click="btnWhatZoom_Click" Margin="3" />
+        </StackPanel>
+
+        <maps:MapControl x:Name="mapControl" 
+                         Grid.Row="2" 
+                         MapServiceToken="Insert Key Here" Grid.RowSpan="2" >
+        </maps:MapControl>
+    </Grid>
+</Page>
